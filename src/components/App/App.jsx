@@ -8,6 +8,7 @@ import Question3 from "../Question3/Question3";
 import Question4 from "../Question4/Question4";
 import Review from "../Review/Review";
 import Success from "../Success/Success";
+import StartFeedback from "../StartFeedback/StartFeedback"
 
 function App() {
 
@@ -27,7 +28,11 @@ function App() {
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
         </header>
-       
+        
+          <Route path="/" exact>
+            <StartFeedback />
+          </Route>
+
           <Route path="/Question1" exact>
             <Question1 />
           </Route>
