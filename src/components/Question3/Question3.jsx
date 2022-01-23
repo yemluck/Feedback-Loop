@@ -10,7 +10,7 @@ function Question3() {
 
     const saveSupport = (event) => {
         event.preventDefault();
-        console.log('in Understanding function');
+        console.log('in saveSupport function');
         // send data to reducer
         dispatch({
             type: 'SUBMIT_SUPPORT',
