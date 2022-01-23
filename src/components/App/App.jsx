@@ -16,15 +16,6 @@ function App() {
     <Router>
       <div className='App'>
         <header className='App-header'>
-          {/* <nav>
-            <Link to="/">Home</Link>  | 
-            <Link to="/Question1"> Question 1</Link>  | 
-            <Link to="/Question2"> Question 2</Link>  | 
-            <Link to="/Question3"> Question 3</Link>  | 
-            <Link to="/Comments"> Comments</Link>  |  
-            <Link to="/Review"> Review </Link>  |
-            <Link to="/Success"> Success </Link>  |
-          </nav> */}
           <h1 className='App-title'>Feedback!</h1>
           <h4>Don't forget it!</h4>
         </header>

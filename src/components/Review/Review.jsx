@@ -16,10 +16,10 @@ function Review() {
     console.log('understanding', understanding);
 
     const feedback = {
-        feeling: feeling,
-        understanding: understanding,
-        support: support,
-        comment: comment
+        feeling: feeling.feeling,
+        understanding: understanding.understanding,
+        support: support.support,
+        comment: comment.comment
     }
 
     const submitFeedback =() => {
@@ -35,13 +35,14 @@ function Review() {
                         type: 'EMPTY_SUPPORT'
                     });
                     dispatch({
-                        type: 'EMPTY COMMENT'
+                        type: 'EMPTY_COMMENT'
                     })
-                    history.push('/')    
+                    history.push('/Success')  
                 })
                 .catch (err => {
                     console.error('POST /api/feedback failed', err)
                 })
+                  
     }
 
     return (
