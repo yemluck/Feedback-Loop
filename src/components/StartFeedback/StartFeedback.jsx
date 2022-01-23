@@ -11,7 +11,7 @@ function StartFeedback() {
             <div>
                 <img src={require("../App/images/feedback3.jpeg")} alt="feedback picture" />
             </div>
-            <Link to="/Question1"> <button> continue to Feedback </button></Link>
+            <Link to="/Question1"> <button> Proceed to Feedback </button></Link>
         </>
     )
 };
