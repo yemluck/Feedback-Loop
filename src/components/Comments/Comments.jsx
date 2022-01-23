@@ -11,7 +11,7 @@ function Comments() {
 
     const saveComment= (event) => {
         event.preventDefault();
-        console.log('in saveFeeling function');
+        console.log('in comment function');
         // send data to store
         dispatch({
             type: 'SUBMIT_COMMENT',
