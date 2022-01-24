@@ -7,7 +7,7 @@ import { useHistory, Link } from 'react-router-dom';
 function Question1() {
     const history = useHistory();
     const dispatch = useDispatch();
-    const [feeling, setFeeling] = useState('');
+    const [feeling, setFeeling] = useState(1);
 
     const saveFeeling = (event) => {
         event.preventDefault();
@@ -19,7 +19,7 @@ function Question1() {
         })
         // clear inputs
         setFeeling('')
-        history.push('/Question2')
+       history.push('/Question2')
     }
 
     return (
@@ -36,8 +36,10 @@ function Question1() {
                 <option value="5">5</option>
             </select>
             <br></br>
-            <Link to="/Question2"> <button onClick={saveFeeling}> Next </button></Link>
-        </form>
+            <button onClick={saveFeeling}> Next</button>
+         </form>
+        
+        
         </>
     )
 };

@@ -6,7 +6,7 @@ import { useHistory, Link } from 'react-router-dom';
 function Question2 () {
     const history = useHistory();
     const dispatch = useDispatch();
-    const [understanding, setUnderstanding] = useState('');
+    const [understanding, setUnderstanding] = useState(1);
 
     const saveUnderstanding = (event) => {
         event.preventDefault();
@@ -18,6 +18,8 @@ function Question2 () {
         })
         // clear inputs
         setUnderstanding('')
+        // push to next route
+        // Link doesn't work
         history.push('/Question3')
     }
 
@@ -34,7 +36,7 @@ function Question2 () {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select><br></br>
-             <Link to="/Question3"> <button onClick={saveUnderstanding}> Next </button></Link>
+            <button onClick={saveUnderstanding}> Next </button>
         </form>
         </>
     )
