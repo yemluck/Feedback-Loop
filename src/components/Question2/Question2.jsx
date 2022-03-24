@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios';
 import { useHistory, Link } from 'react-router-dom';
 
 function Question2 () {
@@ -20,7 +19,7 @@ function Question2 () {
         setUnderstanding('')
         // push to next route
         // Link doesn't work
-        history.push('/Question3')
+        history.push('/support')
     }
 
     return(
@@ -36,6 +35,7 @@ function Question2 () {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select><br></br>
+            <Link to="/feeling"><button > Back </button></Link>
             <button onClick={saveUnderstanding}> Next </button>
         </form>
         </>

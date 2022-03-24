@@ -8,10 +8,10 @@ function Review() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const feeling = useSelector(store => store.feelingReducer[0])
-    const understanding = useSelector(store => store.understandingReducer[0])
-    const support = useSelector(store => store.supportReducer[0])
-    const comment = useSelector(store => store.commentReducer[0])
+    const feeling = useSelector(store => store.feelingReducer)
+    const understanding = useSelector(store => store.understandingReducer)
+    const support = useSelector(store => store.supportReducer)
+    const comment = useSelector(store => store.commentReducer)
 
     console.log('understanding', understanding);
 
@@ -29,24 +29,10 @@ function Review() {
         axios.post('/api/feedback', feedback, {timeout: 1000})
                 .then(response => {
                     //  move to the success route after successful submission
-                    history.push('/Success') 
+                    history.push('/success') 
                     dispatch({
-                    // empty store.feeling
-                    type: 'EMPTY_FEELING'
+                    type: 'EMPTY'
                     });
-                    dispatch({
-                     // empty store.understanding
-                    type: 'EMPTY_UNDERSTANDING'
-                    });
-                    dispatch({
-                    // empty store.support
-                    type: 'EMPTY_SUPPORT'
-                    });
-                    dispatch({
-                    // empty store.comment
-                    type: 'EMPTY_COMMENT'
-                    })
-                    
                 })
                 .catch (err => {
                     console.error('POST /api/feedback failed', err)
@@ -62,6 +48,7 @@ function Review() {
             <h3> Understanding: {understanding.understanding}</h3>
             <h3> Support: {support.support}</h3>
             <h3> Comments: {comment.comment}</h3>
+            <Link to="/comments"><button > Back </button></Link>
 
             <button onClick={submitFeedback}> SUBMIT </button>
         </>

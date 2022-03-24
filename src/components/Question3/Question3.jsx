@@ -18,7 +18,7 @@ function Question3() {
         })
         // clear inputs
         setSupport('')
-       history.push('/Comments')
+       history.push('/comments')
     }
 
     return (
@@ -34,7 +34,7 @@ function Question3() {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>   <br></br>  
-            
+            <Link to="/understanding"><button > Back </button></Link>
            <button onClick={saveSupport}> Next </button>
         </form>
         </>

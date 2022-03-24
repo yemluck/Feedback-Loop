@@ -21,7 +21,7 @@ function Comments() {
         // push to next component
         // initially used Link but it stopped working once I put a function in my button
         // will do more research to figure out why
-        history.push('/Review')
+        history.push('/review')
     }
 
     return (
@@ -32,7 +32,8 @@ function Comments() {
                 <label htmlFor="comments"> Comments </label><br></br>
                 <input type="text"  value={comment} onChange={evt => setComment(evt.target.value)}/>
                 <br></br>
-            <button onClick={saveComment}> Next </button>
+                <Link to="/support"><button > Back </button></Link>
+                <button onClick={saveComment}> Next </button>
             </form>
         </>
     )
