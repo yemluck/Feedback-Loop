@@ -1,6 +1,5 @@
 import React,  { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios';
 import { useHistory, Link } from 'react-router-dom';
 // mui
 import InputLabel from '@mui/material/InputLabel';
