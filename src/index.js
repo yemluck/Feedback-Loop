@@ -13,47 +13,47 @@ import logger from "redux-logger";
 
 // Reducers
 // feeling reducer
-const feelingReducer = (state=[], action) => {
+const feelingReducer = (state={}, action) => {
     switch (action.type) {
         case 'SUBMIT_FEELING':
-            return [...state, action.payload];
-        case 'EMPTY_FEELING':
-            state = []
+            return action.payload;
+        case 'EMPTY':
+            state = {}
             return state;
     }
     return state
 }
 
 // understanding reducer
-const understandingReducer = (state = [], action) => {
+const understandingReducer = (state = {}, action) => {
     switch (action.type) {
         case 'SUBMIT_UNDERSTANDING':
-            return [...state, action.payload];
-        case 'EMPTY_UNDERSTANDING':
-            state = [];
+            return action.payload;
+        case 'EMPTY':
+            state = {};
             return state;
     }
     return state
 }
 
 // support reducer
-const supportReducer = (state = [], action) => {
+const supportReducer = (state = {}, action) => {
     switch (action.type) {
         case 'SUBMIT_SUPPORT':
-            return [...state, action.payload];
-        case 'EMPTY_SUPPORT':
-            state = []
+            return action.payload;
+        case 'EMPTY':
+            state = {}
             return state;
     }
     return state
 }
 // comment reducer
-const commentReducer = (state = [], action) => {
+const commentReducer = (state = {}, action) => {
     switch (action.type) {
         case 'SUBMIT_COMMENT':
-            return [...state, action.payload];
-        case 'EMPTY_COMMENT':
-            state = [];
+            return action.payload;
+        case 'EMPTY':
+            state = {};
             return state;
     }
     return state

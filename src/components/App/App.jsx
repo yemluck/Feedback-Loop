@@ -24,27 +24,27 @@ function App() {
             <StartFeedback />
           </Route>
 
-          <Route path="/Question1" exact>
+          <Route path="/feeling" exact>
             <Question1 />
           </Route>
 
-          <Route path="/Question2" exact>
+          <Route path="/understanding" exact>
             <Question2 />
           </Route>
 
-          <Route path="/Question3" exact>
+          <Route path="/support" exact>
             <Question3 />
           </Route>
 
-          <Route path="/Comments" exact>
+          <Route path="/comments" exact>
             <Comments />
           </Route>
 
-          <Route path="/Review" exact>
+          <Route path="/review" exact>
             <Review />
           </Route>
 
-          <Route path="/Success" exact>
+          <Route path="/success" exact>
             <Success />
           </Route>
 

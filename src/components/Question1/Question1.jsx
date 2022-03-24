@@ -1,7 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React,  { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios';
 import { useHistory, Link } from 'react-router-dom';
+// mui
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import CardContent from '@mui/material/CardContent';
+
 
 
 function Question1() {
@@ -19,28 +29,39 @@ function Question1() {
         })
         // clear inputs
         setFeeling('')
-       history.push('/Question2')
+       history.push('/understanding')
     }
 
     return (
-        <>
+       
+       <Card sx={{ minWidth: 275, maxWidth: 700, minHeight: 500, margin: 'auto' }}>
+         <CardContent sx={{ position: 'relative', alignItems: 'center'}}>
         <h1> How are you feeling today?</h1>
 
-        <form>
-            <label htmlFor="feeling"> Feeling? </label><br></br>
-            <select name="feeling" required value={feeling} onChange={evt => setFeeling(evt.target.value)}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
-            <br></br>
-            <button onClick={saveFeeling}> Next</button>
-         </form>
+        <Box sx={{ maxWidth: 80 }}>
+
+        <FormControl fullWidth sx={{ position: 'relative', alignItems: 'center'}}>
+            <InputLabel id="demo-simple-select-label">Feeling</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={feeling}
+                    label="Feeling"
+                    onChange={evt => setFeeling(evt.target.value)}
+                >
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                    <MenuItem value={4}>4</MenuItem>
+                    <MenuItem value={5}>5</MenuItem>
+                </Select>
+         </FormControl>
+         </Box>
+        </CardContent>
+        <Button variant="contained" onClick={saveFeeling} sx={{ marginTop: 3, position: 'absolute', right: 250, bottom: 200 }}> Next</Button>
+        </Card>
         
-        
-        </>
+     
     )
 };
 
