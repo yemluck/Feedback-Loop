@@ -6,7 +6,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import CardContent from '@mui/material/CardContent';
@@ -33,16 +32,15 @@ function Question1() {
 
     return (
        
-       <Card sx={{ minWidth: 275, maxWidth: 700, minHeight: 500, margin: 'auto' }}>
-         <CardContent sx={{ position: 'relative', alignItems: 'center'}}>
+       <Card sx={{  width: 700, height: 500, margin: 'auto' }}>
+         <CardContent sx={{  alignItems: 'center', height: "400px"}}>
         <h1> How are you feeling today?</h1>
 
-        <Box sx={{ maxWidth: 80 }}>
 
-        <FormControl fullWidth sx={{ position: 'relative', alignItems: 'center'}}>
-            <InputLabel id="demo-simple-select-label">Feeling</InputLabel>
+        <FormControl fullWidth sx={{ m: 10, maxWidth: 120 }}>
+            <InputLabel id="feeling">Feeling</InputLabel>
                 <Select
-                    labelId="demo-simple-select-label"
+                    labelId="feeling"
                     id="demo-simple-select"
                     value={feeling}
                     label="Feeling"
@@ -55,9 +53,8 @@ function Question1() {
                     <MenuItem value={5}>5</MenuItem>
                 </Select>
          </FormControl>
-         </Box>
+            <Button variant="contained" onClick={saveFeeling} sx={{ marginTop: 3, position: 'absolute', right: 250, bottom: 200 }}> Next</Button>
         </CardContent>
-        <Button variant="contained" onClick={saveFeeling} sx={{ marginTop: 3, position: 'absolute', right: 250, bottom: 200 }}> Next</Button>
         </Card>
         
      
