@@ -1,7 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom';
+//MUI
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import CardContent from '@mui/material/CardContent';
+
 
 function Question3() {
     const history = useHistory();
@@ -22,22 +30,31 @@ function Question3() {
     }
 
     return (
-        <>
-        <h1> How well are you being supported </h1>
+        <Card sx={{ width: 700, height: 500, margin: 'auto'}}>
+            <CardContent sx={{ alignItems: 'center', height: "400px" }}>
+            <h1> How well are you being supported </h1>
 
-        <form> 
-             <label htmlFor="support"> Support? </label><br></br>
-                <select name="support" required value={support} onChange={evt => setSupport(evt.target.value)}>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>   <br></br>  
-            <Link to="/understanding"><button > Back </button></Link>
-           <button onClick={saveSupport}> Next </button>
-        </form>
-        </>
+                <FormControl sx={{ m: 10, minWidth: 120 }}>
+                    <InputLabel id="support">Support</InputLabel>
+                    <Select
+                        labelId="support"
+                        value={support}
+                        label="support"
+                        onChange={evt => setSupport(evt.target.value)}
+                    >
+                        <MenuItem value={1}>1</MenuItem>
+                        <MenuItem value={2}>2</MenuItem>
+                        <MenuItem value={3}>3</MenuItem>
+                        <MenuItem value={4}>4</MenuItem>
+                        <MenuItem value={5}>5</MenuItem>
+                    </Select>
+                </FormControl>
+            </CardContent>
+            <div className='uBtn'>
+                <Link to="/understanding"><Button variant="contained" > Back </Button></Link>
+                <Button variant="contained" onClick={saveSupport}> Next </Button>
+            </div>
+        </Card>
     )
 };
 
