@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom';
-
+// Mui
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField'
 
 function Comments() {
     const history = useHistory();
@@ -25,17 +28,25 @@ function Comments() {
     }
 
     return (
-        <>
+        <Card sx={{ width: 700, height: 500, margin: 'auto', backgroundColor: "" }}>
+
             <h1> Any comments you want to leave? </h1>
 
             <form>
-                <label htmlFor="comments"> Comments </label><br></br>
-                <input type="text"  value={comment} onChange={evt => setComment(evt.target.value)}/>
+                <TextField sx={{ m: 10}}
+                    type="text"  
+                    value={comment} 
+                    multiline
+                    label="Comments" 
+                    onChange={evt => setComment(evt.target.value)}
+                />
                 <br></br>
-                <Link to="/support"><button > Back </button></Link>
-                <button onClick={saveComment}> Next </button>
+                <div className='uBtn'>
+                    <Link to="/support"><Button variant='contained' > Back </Button></Link>
+                    <Button variant='contained' onClick={saveComment}> Next </Button>
+                </div>
             </form>
-        </>
+        </Card>
     )
 };
 

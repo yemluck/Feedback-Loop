@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios';
 import { useHistory, Link} from 'react-router-dom';
-
+//MUI
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
 
 function Review() {
 
@@ -41,17 +43,19 @@ function Review() {
     }
 
     return (
-        <>
+        <Card sx={{ width: 700, height: 500, margin: 'auto' }}>
+
             <h1> Review Your Feedback </h1>
 
             <h3> Feelings: {feeling.feeling}</h3>
             <h3> Understanding: {understanding.understanding}</h3>
             <h3> Support: {support.support}</h3>
             <h3> Comments: {comment.comment}</h3>
-            <Link to="/comments"><button > Back </button></Link>
-
-            <button onClick={submitFeedback}> SUBMIT </button>
-        </>
+            <div className='uBtn'>
+                <Link to="/comments"><Button variant='contained'> Back </Button></Link>
+                <Button variant='contained' onClick={submitFeedback}> SUBMIT </Button>
+            </div>
+        </Card>
     )
 };
 
